@@ -12,9 +12,9 @@ import { AuthSiV1Service } from 'auth-si-v1';
 export class TesteComponent implements OnInit {
 
   private config = {
-    urlAuth:  "http://websgppvwbr01.bs.br.bsch:9091/",
-    urlProject: "http://localhost:4200/@",
-    urlApi: "https://sgd.paas.santanderbr.pre.corp/api-src/user/decrypt",
+    urlAuth:  "",
+    urlProject: "",
+    urlApi: "",
     keys: "gustavo",
     validate: 60
   }
