@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -128,6 +130,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "auth-si-v1": {
+      "root": "projects/auth-si-v1",
+      "sourceRoot": "projects/auth-si-v1/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/auth-si-v1/tsconfig.lib.json",
+            "project": "projects/auth-si-v1/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/auth-si-v1/src/test.ts",
+            "tsConfig": "projects/auth-si-v1/tsconfig.spec.json",
+            "karmaConfig": "projects/auth-si-v1/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/auth-si-v1/tsconfig.lib.json",
+              "projects/auth-si-v1/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
